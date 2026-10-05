@@ -1,0 +1,664 @@
+/* =========================================================
+   MY PLAYLIST - PREMIUM CINEMATIC CSS
+   Based on the uploaded Netflix Spain Style Reference
+   ========================================================= */
+
+
+/* =========================
+   1. ROOT VARIABLES
+   ========================= */
+
+:root {
+
+    /* Colors */
+    --color-netflix-red: #e50914;
+    --color-feature-gradient: linear-gradient(
+        149deg,
+        #192247,
+        #210e17
+    );
+
+    --color-deep-space: #000000;
+    --color-graphite: #2d2d2d;
+    --color-charcoal: #414141;
+    --color-slate: #5a5a5a;
+    --color-ash: #808080;
+    --color-silver: #b3b3b3;
+    --color-white: #ffffff;
+
+
+    /* Typography */
+    --font-main:
+        "Netflix Sans",
+        Roboto,
+        Inter,
+        Arial,
+        sans-serif;
+
+    --text-caption: 13px;
+    --text-body: 16px;
+    --text-subheading: 20px;
+    --text-heading-small: 24px;
+    --text-heading: 56px;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-bold: 700;
+    --weight-black: 900;
+
+
+    /* Spacing */
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-48: 48px;
+    --space-64: 64px;
+    --space-100: 100px;
+
+
+    /* Layout */
+    --max-width: 1280px;
+
+
+    /* Radius */
+    --radius-card: 16px;
+    --radius-small: 4px;
+}
+
+
+/* =========================
+   2. RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--color-deep-space);
+    color: var(--color-white);
+
+    font-family: var(--font-main);
+    font-size: var(--text-body);
+    font-weight: var(--weight-regular);
+    line-height: 1.5;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   3. PAGE CONTAINER
+   ========================= */
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   4. HEADER / HERO
+   ========================= */
+
+header {
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 64px 24px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            #000000
+        );
+}
+
+
+/* Cinematic background glow */
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 400px;
+
+    top: -180px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(229, 9, 20, 0.22),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Bottom cinematic fade */
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 150px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #000000
+        );
+
+    pointer-events: none;
+}
+
+
+header h1 {
+    position: relative;
+    z-index: 2;
+
+    font-size: clamp(42px, 7vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: var(--weight-black);
+
+    letter-spacing: -1.5px;
+
+    color: var(--color-white);
+
+    margin-bottom: 16px;
+}
+
+
+header h1::first-letter {
+    color: var(--color-netflix-red);
+}
+
+
+header p {
+    position: relative;
+    z-index: 2;
+
+    color: var(--color-silver);
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    max-width: 600px;
+}
+
+
+/* =========================
+   5. SECTION
+   ========================= */
+
+section {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+
+    padding: 48px 0;
+}
+
+
+section + section {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+section > h2 {
+    font-size: var(--text-heading-small);
+
+    font-weight: var(--weight-bold);
+
+    line-height: 1.2;
+
+    margin-bottom: 24px;
+
+    color: var(--color-white);
+
+    letter-spacing: -0.3px;
+}
+
+
+/* =========================
+   6. SONG SECTION
+   ========================= */
+
+section:first-of-type {
+    padding-top: 32px;
+}
+
+
+section:first-of-type > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+    padding: 24px;
+
+    margin-bottom: 16px;
+
+    border-radius: var(--radius-card);
+
+    background:
+        var(--color-feature-gradient);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+section:first-of-type > div:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(229, 9, 20, 0.5);
+}
+
+
+section:first-of-type h3 {
+    color: var(--color-white);
+
+    font-size: 20px;
+
+    font-weight: var(--weight-bold);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   7. AUDIO PLAYER
+   ========================= */
+
+audio {
+    width: 420px;
+
+    max-width: 100%;
+
+    height: 44px;
+}
+
+
+/* =========================
+   8. IMAGE SECTION
+   ========================= */
+
+section:nth-of-type(2) {
+    position: relative;
+}
+
+
+section:nth-of-type(2) > div {
+    display: inline-flex;
+
+    flex-direction: column;
+
+    vertical-align: top;
+
+    width: calc(33.333% - 14px);
+
+    margin-right: 16px;
+
+    margin-bottom: 20px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-card);
+
+    background: var(--color-graphite);
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+section:nth-of-type(2) > div:last-child {
+    margin-right: 0;
+}
+
+
+section:nth-of-type(2) > div:hover {
+    transform: scale(1.025);
+
+    filter: brightness(1.1);
+}
+
+
+section:nth-of-type(2) h3 {
+    order: 2;
+
+    padding: 16px 20px;
+
+    font-size: 16px;
+
+    font-weight: var(--weight-medium);
+
+    color: var(--color-white);
+}
+
+
+section:nth-of-type(2) img {
+    order: 1;
+
+    display: block;
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   9. VIDEO SECTION
+   ========================= */
+
+section:nth-of-type(3) {
+    padding-bottom: 64px;
+}
+
+
+section:nth-of-type(3) > div {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-card);
+
+    background:
+        var(--color-feature-gradient);
+
+    padding: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+section:nth-of-type(3) h3 {
+    font-size: 20px;
+
+    font-weight: var(--weight-bold);
+
+    margin-bottom: 16px;
+}
+
+
+video {
+    display: block;
+
+    width: 100%;
+
+    max-height: 620px;
+
+    object-fit: contain;
+
+    background: #000000;
+
+    border-radius: var(--radius-small);
+}
+
+
+/* =========================
+   10. MEDIA PLAYER CONTROLS
+   ========================= */
+
+audio,
+video {
+    accent-color: var(--color-netflix-red);
+}
+
+
+/* =========================
+   11. FOOTER
+   ========================= */
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 32px 24px;
+
+    text-align: center;
+
+    background: #000000;
+}
+
+
+footer p {
+    color: var(--color-silver);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   12. SELECTION
+   ========================= */
+
+::selection {
+    background: var(--color-netflix-red);
+
+    color: var(--color-white);
+}
+
+
+/* =========================
+   13. SCROLLBAR
+   ========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-charcoal);
+
+    border-radius: 4px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-netflix-red);
+}
+
+
+/* =========================
+   14. RESPONSIVE - TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        min-height: 380px;
+    }
+
+
+    section {
+        width: min(
+            calc(100% - 40px),
+            var(--max-width)
+        );
+    }
+
+
+    section:nth-of-type(2) > div {
+        width: calc(50% - 10px);
+
+        margin-right: 16px;
+    }
+
+
+    section:nth-of-type(2) > div:nth-child(odd) {
+        margin-right: 16px;
+    }
+
+
+    section:nth-of-type(2) > div:nth-child(even) {
+        margin-right: 0;
+    }
+
+
+    section:first-of-type > div {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    audio {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   15. RESPONSIVE - MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        min-height: 340px;
+
+        padding: 48px 20px;
+    }
+
+
+    header h1 {
+        font-size: 44px;
+
+        letter-spacing: -1px;
+    }
+
+
+    header p {
+        font-size: 16px;
+    }
+
+
+    section {
+        width: calc(100% - 32px);
+
+        padding: 36px 0;
+    }
+
+
+    section > h2 {
+        font-size: 24px;
+
+        margin-bottom: 20px;
+    }
+
+
+    section:first-of-type > div {
+        padding: 20px;
+
+        gap: 16px;
+    }
+
+
+    section:nth-of-type(2) > div {
+        width: 100%;
+
+        margin-right: 0;
+
+        display: flex;
+    }
+
+
+    section:nth-of-type(2) img {
+        height: 260px;
+    }
+
+
+    section:nth-of-type(3) > div {
+        padding: 16px;
+    }
+
+
+    video {
+        max-height: 400px;
+    }
+
+
+    footer {
+        padding: 28px 16px;
+    }
+}
+
+
+/* =========================
+   16. SMALL MOBILE
+   ========================= */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 38px;
+    }
+
+
+    section {
+        width: calc(100% - 24px);
+    }
+
+
+    section:nth-of-type(2) img {
+        height: 220px;
+    }
+}
